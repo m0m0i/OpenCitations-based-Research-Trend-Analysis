@@ -1,0 +1,10 @@
+python-dotenv
+langgraph
+langchain
+langchain-openai
+langchain-neo4j
+langchain-community
+neo4j
+chromadb
+flask
+flask-cors

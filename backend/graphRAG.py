@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 from Graph.graph import app
-from IPython.display import Image, display
 
 load_dotenv()
 

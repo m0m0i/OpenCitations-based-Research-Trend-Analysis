@@ -67,8 +67,8 @@ The system supports OpenAI models. For optimal results:
 pip install -r requirements.txt
 ```
 2. Instantiate the Neo4j Graph Database (more instructions can be found in the graph_database_setup folder):
-   - Ensure that the APOC plugin is installed (this provides extra functionality for Neo4j)
-3. Configure environment variables by configuring your .env file:
+  - Ensure that the APOC plugin is installed (this provides extra functionality for Neo4j)
+4. Configure environment variables by configuring your .env file:
   - Create file .env with the contents of .env.example
   - Specify the Neo4j URI, user, and password
   - Paste your OpenAI API Key

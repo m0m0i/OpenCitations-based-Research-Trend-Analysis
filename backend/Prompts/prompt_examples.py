@@ -1,4 +1,3 @@
-# prompt examples were ai generated via GPT, might be bad
 examples = [
     {
         "question": "What are the titles of publications authored by a specific author?",
@@ -9,14 +8,6 @@ examples = [
         "query": "MATCH (a:Author)-[:AUTHORED]->(p:Publication) WHERE p.title = 'Publication Title' RETURN a.name"
     },
     {
-        "question": "Find all publications cited by a specific publication.",
-        "query": "MATCH (p1:Publication)-[:CITED]->(p2:Publication) WHERE p1.title = 'Publication Title' RETURN p2.title"
-    },
-    {
-        "question": "Find all publications that cite a specific publication.",
-        "query": "MATCH (p1:Publication)<-[:CITED]-(p2:Publication) WHERE p1.title = 'Publication Title' RETURN p2.title"
-    },
-    {
         "question": "How many publications were authored by a specific author?",
         "query": "MATCH (a:Author)-[:AUTHORED]->(p:Publication) WHERE a.name = 'Author Name' RETURN count(p)"
     },
@@ -25,6 +16,7 @@ examples = [
         "query": "MATCH (a:Author)-[:AUTHORED]->(p:Publication) WHERE p.venue = 'Venue Name' RETURN DISTINCT a.name"
     },
     {
+	#no "citing" column. Does this equal to the "volume" column?
         "question": "What are the top 10 cited publications?",
         "query": "MATCH (p:Publication)<-[:CITED]-(citing:Publication) RETURN p.title, count(citing) AS citation_count ORDER BY citation_count DESC LIMIT 10"
     },
@@ -49,14 +41,7 @@ examples = [
         "query": "MATCH (a:Author)-[:AUTHORED]->(p:Publication) WHERE a.name = 'Author Name' AND p.venue = 'Venue Name' RETURN p.title"
     },
     {
-        "question": "Find publications citing a specific publication and their venues.",
-        "query": "MATCH (citing:Publication)-[:CITED]->(cited:Publication) WHERE cited.title = 'Publication Title' RETURN citing.title, citing.venue"
-    },
-    {
-        "question": "Which publications are cited by a publication authored by a specific author?",
-        "query": "MATCH (a:Author)-[:AUTHORED]->(p1:Publication)-[:CITED]->(p2:Publication) WHERE a.name = 'Author Name' RETURN p2.title"
-    },
-    {
+	#no "citing" column. Does this equal to the "volume" column?
         "question": "Who are the authors of the most cited publication?",
         "query": "MATCH (p:Publication)<-[:CITED]-(citing:Publication), (a:Author)-[:AUTHORED]->(p) WITH p, count(citing) AS citation_count ORDER BY citation_count DESC LIMIT 1 RETURN p.title, a.name"
     },
@@ -67,17 +52,5 @@ examples = [
     {
         "question": "How many publications did a specific author publish in a specific year?",
         "query": "MATCH (a:Author)-[:AUTHORED]->(p:Publication) WHERE a.name = 'Author Name' AND p.year = 2020 RETURN count(p)"
-    },
-    {
-        "question": "What are the publishers of publications authored by a specific author?",
-        "query": "MATCH (a:Author)-[:AUTHORED]->(p:Publication) WHERE a.name = 'Author Name' RETURN DISTINCT p.publisher"
-    },
-    {
-        "question": "How many publications cite a specific publication?",
-        "query": "MATCH (p:Publication)<-[:CITED]-(citing:Publication) WHERE p.title = 'Publication Title' RETURN count(citing)"
-    },
-    {
-        "question": "What are the publications published in a specific venue and cited by a specific publication?",
-        "query": "MATCH (p1:Publication)-[:CITED]->(p2:Publication) WHERE p1.title = 'Citing Publication Title' AND p2.venue = 'Venue Name' RETURN p2.title"
     }
 ]

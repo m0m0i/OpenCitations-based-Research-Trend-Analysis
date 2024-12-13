@@ -12,7 +12,7 @@ To ensure feasibility within our time constraints, we will concentrate on a spec
 
 ## How to set up the application
 
-1. Create the Neo4j database (e.g. Neo4j desktop)
+1. Create the Neo4j database (e.g. Neo4j desktop), ensuring APOC plugin is installed
 2. Seed the test data with graph_database_setup/4_RUN_THIS_upload_sampled_data_to_Neo4j.ipynb
 3. Create `backend/.env` by copying `backend/.env.example`
 4. Set `OPENAI_API_KEY` in `backend/.env`
@@ -22,7 +22,7 @@ To ensure feasibility within our time constraints, we will concentrate on a spec
 8. Run Nextjs app (pnpm dev)
 9. Run python programs to visualize data (e.g. python3 visualization/top_10.py)
 
-## Applicaiton Components:
+## Application Components:
 
 - Data visualization
   - visualize the relationship between information in the GraphDB
@@ -33,6 +33,34 @@ To ensure feasibility within our time constraints, we will concentrate on a spec
 - Builld RAG based LLM application
   - fetch data from GraphDB
   - augment response with data
+
+## How to Use
+
+### Query Types
+
+The system is designed to handle various types of questions about your graph database. Here are some effective query patterns:
+   - "List publications from [Venue Name]"
+   - "Find publications by [Publisher Name]"
+   - "What are the titles of publications authored by [Author Name]?"
+   - "Find all publications published in 2020"
+
+### Database Modifications
+
+The system supports database modification operations:
+- Creating new nodes
+- Adding relationships
+- Updating properties
+- Deleting nodes or relationships
+
+**Note:** Be cautious with modification operations as they directly affect your database. Ensure proper access controls and validation are in place.
+
+### Limitations
+
+- Query response time may vary based on complexity
+- Some very specific or unusual query patterns might need reformulation
+- Vector search results depend on the quality of embeddings
+- The full OpenCitations dataset is not available due to computational restraints
+- Limited data on publications due to OpenCitations dataset contents
 
 ## Team Members:
 

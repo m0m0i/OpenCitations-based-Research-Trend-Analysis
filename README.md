@@ -1,5 +1,11 @@
 # cs410-team-project
 
+TextData submission:
+https://textdata.org/submissions/672584d522ea54f14be32829
+
+Video demo:
+https://mediaspace.illinois.edu/media/t/1_zc5xe7gq
+
 ## Project Title
 
 **OpenCitations-based Research Trend Analysis**
@@ -7,7 +13,9 @@
 ## Project Description:
 
 Our project aims to analyze citation patterns within the OpenCitations dataset to identify and visualize emerging research trends across various academic fields. By leveraging additional datasets from Wikidata and DBpedia, we will track the growth of citations in specific research areas, pinpoint influential publications and authors, and visualize the evolution of these fields over time.  
+
 We will focus on developing innovative metrics for citation analysis, such as measuring citation velocity and impact score, which will help capture the nuances of how different research areas develop and shift. Our interactive visualizations will allow users to explore trends dynamically, enhancing their understanding of the academic landscape.  
+
 To ensure feasibility within our time constraints, we will concentrate on a specific research domain, allowing for in-depth analysis. Our goal is to create a comprehensive tool that not only provides valuable insights into citation dynamics but also contributes to the academic community by fostering a deeper understanding of research impact and future directions. Ultimately, our project aims to empower researchers and institutions to make informed decisions based on evolving research trends.
 
 ## How to set up the application
